@@ -58,5 +58,8 @@
 		"*.+(js|json|ts|svelte)": [
 			"yarn run format"
 		]
+	},
+	"dependencies": {
+		"@anoram/leaflet-svelte": "*"
 	}
 }

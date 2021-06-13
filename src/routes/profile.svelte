@@ -127,14 +127,14 @@
     export let user //  When using approach #3 (client-side user session) comment this out and replace `user` with `$user` in the template
 </script>
 
-<div class="flex flex-col justify-center items-center relative">
+<div class="flex flex-col justify-center items-center relative pb-5">
     <div class="p-2 flex flex-col place-items-center">
         <div class="mt-2">
             <Avatar on:change={updAvatar} src="{avatar_url}" title={username} loading={loading} />
         </div>
       </div>
     <div class="profile-detail my-4" on:click={toggleModal}>
-        <h2 class="text-4xl mb-1">Howdie, { username }!</h2>
+        <h2 class="text-4xl mb-1">Welcome to your MyHealthcare dashboard, { username }!</h2>
         <span class="inline-block px-2 py-1 bg-gray-400 text-white rounded-full"><ChromeIcon class="inline-block" size="1x"/> {website}</span>
         <div class="text-gray-500 text-sm my-1">(click to update)</div>
     </div>
@@ -147,12 +147,9 @@
         <div>
             <button on:click={signOut} class="border bg-gray-500 border-gray-600 text-white px-3 py-2 rounded w-full text-center transition duration-150 shadow-lg">Sign Out</button>
         </div>
-        <div class="rounded-md shadow-2xl bg-green-800 w-3/5 overflow-hidden mt-4">
-            <h3 class="px-2 py-1 text-white">User from Supabase</h3>
-            <small class="bg-gray-800 text-white px-4 py-2 w-full inline-block">{JSON.stringify(user)}</small>
-        </div>
     {/if}
 </div>
+<iframe class="px-32" width="100%" height="500" src="https://datastudio.google.com/embed/reporting/2f6df626-8e33-42b2-8750-4414eda3d46d/page/3jgOC"  frameborder="0" style="border:0" allowfullscreen></iframe>
 
 {#if isModalOpened}
 	<Modal {toggleModal}>
